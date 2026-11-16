@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="好好意语 A1–A2 第 5 课：意大利语句子排序互动练习" />
+    <title>Metti in ordine le parole!｜好好意语</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@500;600;700&amp;family=Noto+Sans+SC:wght@400;500;600;700&amp;family=Playfair+Display:ital,wght@0,700;1,700&amp;display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="site-header">
+        <a class="brand" href="#" aria-label="好好意语练习首页">
+          <span class="brand-mark" aria-hidden="true">H</span>
+          <span>好好意语 <i>·</i> A1–A2</span>
+        </a>
+        <span class="lesson-tag">LEZIONE 05</span>
+      </header>
+
+      <main id="app" aria-live="polite"></main>
+    </div>
+
+    <template id="exercise-template">
+      <section class="exercise-view">
+        <div class="title-block">
+          <p class="eyebrow">ORDINE DELLE PAROLE</p>
+          <h1>Metti in ordine<br /><em>le parole!</em></h1>
+          <p class="subtitle">第 5 课 · 意大利语句子排序</p>
+        </div>
+
+        <article class="exercise-card">
+          <div class="progress-row">
+            <span id="counter" class="counter"></span>
+            <div class="progress-track" aria-hidden="true"><span id="progress-bar"></span></div>
+          </div>
+
+          <div class="prompt-row">
+            <div>
+              <p class="micro-label">COMPONI LA FRASE</p>
+              <h2>按顺序点击词块组成句子</h2>
+            </div>
+            <span class="step-number" id="step-number" aria-hidden="true"></span>
+          </div>
+
+          <div class="answer-zone" id="answer-zone" aria-label="已选择的词块">
+            <p class="answer-placeholder">从下方选择第一个词块…</p>
+          </div>
+
+          <div class="word-bank" id="word-bank" aria-label="待选词块"></div>
+
+          <div class="tool-row">
+            <button class="text-button" id="clear-button" type="button">↺ 清空重排</button>
+            <button class="text-button" id="hint-button" type="button">✦ 提示</button>
+          </div>
+          <p class="hint-box" id="hint-box" hidden></p>
+          <div id="feedback" class="feedback" role="status"></div>
+
+          <button class="primary-button" id="check-button" type="button">检查答案 <span>→</span></button>
+
+          <div class="navigation-row">
+            <button class="nav-button" id="previous-button" type="button">← 上一题</button>
+            <button class="nav-button" id="next-button" type="button">下一题 →</button>
+          </div>
+        </article>
+      </section>
+    </template>
+
+    <template id="summary-template">
+      <section class="summary-view">
+        <div class="summary-hero">
+          <p class="eyebrow">BRAVISSIMO!</p>
+          <h1>Hai finito! <span aria-hidden="true">✦</span></h1>
+          <p>你已经完成全部 10 题。现在，开口读一读吧。</p>
+        </div>
+
+        <article class="summary-card reading-card">
+          <p class="section-index">01 · PRONUNCIA</p>
+          <h2>Leggi ad alta voce! <small>· 大声读一读</small></h2>
+          <p class="section-intro">先慢慢读一遍，再把每句话连起来读一遍。</p>
+          <ol class="reading-list">
+            <li>Ho un lavoro interessante e stimolante.</li>
+            <li>Haohao ha una gattina molto carina e dolce.</li>
+            <li>Sono un operaio e lavoro in una fabbrica.</li>
+            <li>Luca beve lentamente il caffè.</li>
+          </ol>
+        </article>
+
+        <article class="summary-card recap-card">
+          <p class="section-index">02 · RIPASSO</p>
+          <h2>Ripassiamo! <small>· 本课小结</small></h2>
+          <p class="recap-lead">先找动词，再看谁做了什么。找到句子的主干后，再补上细节。</p>
+          <div class="example-lines">
+            <p>Mario <mark class="verb">mangia</mark> la torta.</p>
+            <p>Mario <mark class="verb">mangia</mark> <mark class="adverb">lentamente</mark> la torta <mark class="adjective">colorata</mark>.</p>
+          </div>
+          <p class="explanation"><b>lentamente</b> 告诉我们 Mario 怎么吃；<b>colorata</b> 告诉我们蛋糕是什么样的。</p>
+        </article>
+
+        <div class="summary-actions">
+          <button class="secondary-button" id="review-button" type="button">← 回看排序</button>
+          <button class="primary-button" id="restart-button" type="button">Ricomincia <small>· 重新开始</small> <span>↻</span></button>
+        </div>
+      </section>
+    </template>
+
+    <script src="app.js"></script>
+  </body>
+</html>
